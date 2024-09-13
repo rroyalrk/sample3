@@ -619,7 +619,7 @@ header .navbar ul li a:hover {
     height: 25rem;
   }
   .education .box-container .box img {
-    width: 100%;
+    width: auto;
   }
   .education .box-container .box .content {
     position: relative;
@@ -639,125 +639,144 @@ header .navbar ul li a:hover {
 /* education media queries ends*/
 /* education section ends */
 
-/* work section starts */
-.work {
-  /* background: #010124; */
-  background: linear-gradient(to bottom, #000031, #00002c);
-}
-.work h2 {
-  color: #fff;
-  padding: 1rem;
-}
-.work .heading span {
-  color: rgb(255, 230, 0);
-}
-.work .box-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin: 2rem;
-}
-.work .box-container .box {
-  flex: 1 1 30rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+/* project section starts */
+.project .timeline {
   position: relative;
-  overflow: hidden;
-  height: 30rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.work .box-container .box img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-.work .box-container .box .content {
-  height: 100%;
-  width: 100%;
+.project .timeline::after {
+  content: "";
   position: absolute;
-  top: 85%;
-  left: 0;
-  background: rgba(255, 255, 255, 0.9);
-  display: flex;
-  flex-direction: column;
+  width: 6px;
+  background: #020133;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -2;
 }
-.work .box-container .box .content .tag {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 4.5rem;
-  width: 100%;
-  padding-left: 1rem;
-  background: #ffd900;
-}
-.work .box-container .box .content .tag h3 {
-  font-size: 2rem;
-}
-.work .box-container .box:hover .content {
-  top: 25%;
-}
-.work .desc {
-  margin: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.work .desc p {
-  font-size: 1.5rem;
-}
-.work .desc .btns {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 2rem;
-}
-.work .desc .btns .btn {
-  line-height: 0;
-  display: inline;
-  padding: 1.5rem 2.5rem;
-  border-radius: 0.5rem;
-  font-size: 1.5rem;
-  color: #fff;
-  background: rgb(12, 12, 12);
-  margin-right: 2rem;
-}
-.work .desc .btns .btn:hover {
-  background: #310ae0f5;
-}
-.work .viewall {
-  display: flex;
-  justify-content: center;
-}
-.work .viewall .btn {
+.project .container {
+  padding: 10px 40px;
   position: relative;
-  line-height: 0;
-  padding: 1.6rem 3rem;
-  border-radius: 0.5em;
-  transition: 0.5s;
-  color: rgb(255, 255, 255);
-  font-weight: 700;
-  border: 2px solid #fff;
-  box-shadow: 0px 5px 10px rgba(65, 84, 241, 0.4);
+  background-color: inherit;
+  width: 50%;
+}
+/*circles on timeline*/
+.project .container::after {
+  content: "\f0b1";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: rgb(255, 255, 255);
+  border: 4px solid #ff9f55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 100;
+  font-size: 1.89rem;
   text-align: center;
-}
-.work .viewall .btn span {
   font-weight: 600;
-  font-size: 1.7rem;
-  font-family: "Nunito", sans-serif;
+  color: #02094b;
+  font-family: "Font Awesome\ 5 Free";
 }
-.work .viewall .btn i {
-  margin-left: 0.3rem;
-  font-size: 1.5rem;
-  transition: 0.3s;
+.project .left {
+  left: 0;
 }
-.work .viewall .btn:hover {
-  background: #fff;
-  color: #000;
+.project .right {
+  left: 50%;
 }
-.work .viewall .btn:hover i {
-  transform: translateX(5px);
+/* arrows pointing right */
+.project .left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid #f68c09;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #f68c09;
 }
-/* work section ends */
+/* arrows pointing left  */
+.project .right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid #f68c09;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #f68c09 transparent transparent;
+}
+.project .right::after {
+  left: -16px;
+}
+.project .content {
+  background-color: #f68c09;
+  position: relative;
+  border-radius: 6px;
+}
+.project .content .tag {
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+}
+.project .content .desc {
+  margin-left: 1.5rem;
+  padding-bottom: 1rem;
+}
+.project .content .desc h3 {
+  font-size: 1.0rem;
+  font-weight: 600;
+}
+.project .content .desc p {
+  font-size: 1.2rem;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  .project {
+    min-height: 80vh;
+  }
+  .project .timeline {
+    margin-top: 2rem;
+  }
+  .project .timeline::after {
+    left: 31px;
+  }
+  .project .container {
+    width: 100%;
+    padding-left: 8rem;
+    padding-right: 2rem;
+  }
+  .project .container::after {
+    font-size: 2.2rem;
+  }
+  .project .container::before {
+    left: 61px;
+    border: medium solid #f68c09;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #f68c09 transparent transparent;
+  }
+  .project .left::after {
+    left: 15px;
+  }
+  .project .right::after {
+    left: 15px;
+  }
+  .project .right {
+    left: 0%;
+  }
+  .morebtn {
+    margin-top: 3rem;
+  }
+}
+/* project media queries ends */
+/* project section ends */
 
 /* experience section starts */
 .experience .timeline {
@@ -959,38 +978,6 @@ header .navbar ul li a:hover {
   position: relative;
 }
 .contact .content form {
-  width: 45%;
-  margin-right: 3.5rem;
-}
-/* work section starts */
-.project {
-  background: #e5ecfb;
-  min-height: 60vh;
-}
-.project .container {
-  max-width: 1050px;
-  width: 100%;
-  background: #fff;
-  border-radius: 1.5rem;
-  margin: 2rem 5rem;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-}
-.project .container .content {
-  display: block;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2.5rem 2rem;
-}
-.project .content .image-box {
-  max-width: 60%;
-  margin-left: 4rem;
-}
-.project .content .image-box img {
-  width: 100%;
-  height: 40rem;
-  position: relative;
-}
-.project .content form {
   width: 45%;
   margin-right: 3.5rem;
 }
