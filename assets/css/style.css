@@ -976,7 +976,7 @@ header .navbar ul li a:hover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 .project .container .content {
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: space-between;
   padding: 2.5rem 2rem;
